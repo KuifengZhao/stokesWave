@@ -62,7 +62,7 @@ Results.omega = omega;
             omegaFun = omega0*(1+omega2+omega4) - omega;        
     end
     kResults = double(vpasolve(omegaFun, k, [0 Inf]));
-    Results.omega0 = g*kResults*tanh(kResults*h);
+    Results.omega0 = sqrt( g*kResults*tanh(kResults*h));
     B31 = (cosh(2*h*kResults)^2 + 12*cosh(2*h*kResults) - 7)/(8*(cosh(2*h*kResults) - 1)^2);
         B33 = (cosh(2*h*kResults)^3 + 3*cosh(2*h*kResults)^2 + 3*cosh(2*h*kResults) + 2)/(8*(cosh(2*h*kResults) - 1)^3);
         B51 = (121*cosh(2*h*kResults)^6 + 432*cosh(2*h*kResults)^5 + 543*cosh(2*h*kResults)^4 - 1407*cosh(2*h*kResults)^3 ...
@@ -125,7 +125,7 @@ elseif and(exist('H', 'var') ==1, exist('T', 'var') ==1)
             aResults = double(S.aw);
             Results.aw = aResults;
     end
-    Results.omega0 = g*kResults*tanh(kResults*h);
+    Results.omega0 = sqrt(g*kResults*tanh(kResults*h));
 elseif  and(exist('a', 'var') ==1, exist('omega0', 'var') ==1)
     Results.omega0 = omega0;
     kResults = double(vpasolve(omega0^2 - g*k*tanh(k*h), k, [0 inf]));
