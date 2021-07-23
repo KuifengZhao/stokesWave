@@ -1,12 +1,12 @@
 # stokesWave
-List of files \\
+List of files 
 
-StokesTheoryCombined.mlx \\
+StokesTheoryCombined.mlx 
 
-toUseStokesTheory.m \\
+toUseStokesTheory.m 
 
-StokesDispSolver.m \\
+StokesDispSolver.m 
 
-StokesEta.m \\
+StokesEta.m 
 
-StokesU.m \\
+StokesU.m 
