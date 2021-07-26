@@ -10,3 +10,7 @@ StokesDispSolver.m
 StokesEta.m 
 
 StokesU.m 
+
+normalizeFreeSurface.mlx
+
+normalizePotentialFunction.mlx
