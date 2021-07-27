@@ -11,7 +11,7 @@ switch modeNo
     % Dingemans corrected, 3rd order
     B31Ding = (3+8*sigma^2-9*sigma^4)/16/sigma^4;
     B33Ding = (27-9*sigma^2+9*sigma^4-3*sigma^6)/64/sigma^6;
-    eta3 = k0^2*a^3*(B31Ding*cos(theta)+k0^2*a^3*B33Ding*cos(3*theta));
+    eta3 = k0^2*a^3*(B31Ding*cos(theta)+B33Ding*cos(3*theta));
     % our derived 4th order equation
     sigma1 =24*(3*cosh(2*k0*h0)+2)*(cosh(2*k0*h0)-1)^4*sinh(2*k0*h0);
     eta4 = k0^3*a^4/sigma1.*((60*alpha1^6 ...
