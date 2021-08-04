@@ -14,3 +14,9 @@ StokesU.m
 normalizeFreeSurface.mlx
 
 normalizePotentialFunction.mlx
+
+FentonU.m
+
+FentonEta.m
+
+FentonDispSolver.m
