@@ -32,7 +32,9 @@ This is a function to find free surface profiles using Fenton's equations.
 This function is the solver to find wave number using the nonlinear dispersion relationship in Fenton's paper. 
 
 Others
+
 hyperIden.m
+
 This is a function to change format of hyperbolic function to \cosh () using the hyperbolic identities.
 
 trigIden.m
