@@ -1,6 +1,6 @@
 function [phi, u, w] = StokesU(k, h, a, modeNo, theta, z)
     g = 9.81;
-    omega0 = g*k*tanh(k*h);
+    omega0 = sqrt(g*k*tanh(k*h));
     sigma = tanh(k*h);
     alpha = cosh(2*k*h);
     A11 = 1/sinh(k*h);
