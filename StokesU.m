@@ -31,7 +31,7 @@ function [phi, u, w] = StokesU(k, h, a, modeNo, theta, z)
             /(16*alpha^3 - 6*alpha^2 - alpha -2)/sinh(2*h*k); 
         
     end
-    phi1 = (A11*omega0*a/k + A31*omega0*k*a^3* + A51*omega0*k^3*a^5).* cosh(k*(z+h)).*sin(theta);
+    phi1 = (A11*omega0*a/k + A31*omega0*k*a^3 + A51*omega0*k^3*a^5).* cosh(k*(z+h)).*sin(theta);
     phi2 = A22*omega0*a^2.*cosh(2*k*(z+h)).*sin(2*theta);
     phi3 = A33*omega0*k*a^3.*cosh(3*k*(z+h)).*sin(3*theta);
     phi4 = A42 *omega0*k^2*a^4.*cosh(2*k*(z+h)).*sin(2*theta) + ...
@@ -39,7 +39,7 @@ function [phi, u, w] = StokesU(k, h, a, modeNo, theta, z)
     phi5 = A53*omega0*k^3*a^5.*cosh(3*k*(z+h)).*sin(3*theta) ...
         + A55*a^5*k^3*omega0.*cosh(5*k*(z+h)).*sin(5*theta);
     phi = (phi1+phi2+phi3+phi4+phi5 + omega0*a/k/sigma*(k*a*C2 + k^3*a^3*C4))';
-    u1 = (A11*omega0*a + A31*omega0*k^2*a^3* + A51*omega0*k^4*a^5) .* cosh(k*(z+h)).*cos(theta);
+    u1 = (A11*omega0*a + A31*omega0*k^2*a^3 + A51*omega0*k^4*a^5) .* cosh(k*(z+h)).*cos(theta);
     u2 = 2*A22*omega0*k*a^2.*cosh(2*k*(z+h)).*cos(2*theta);
     u3 = 3*A33*omega0*k^2*a^3.*cosh(3*k*(z+h)).*cos(3*theta);
     u4 = 2*A42 *omega0*k^3*a^4.*cosh(2*k*(z+h)).*cos(2*theta) + ...
@@ -47,7 +47,7 @@ function [phi, u, w] = StokesU(k, h, a, modeNo, theta, z)
     u5 = 3*A53*omega0*k^4*a^5.*cosh(3*k*(z+h)).*cos(3*theta) ...
         + 5*A55*k^4*a^5*omega0.*cosh(5*k*(z+h)).*cos(5*theta);
     u = (u1 + u2 + u3 + u4 + u5)';
-    w1 = (A11*omega0*a + A31*omega0*k^2*a^3* + A51*omega0*k^4*a^5) .* sinh(k*(z+h)).*sin(theta);
+    w1 = (A11*omega0*a + A31*omega0*k^2*a^3 + A51*omega0*k^4*a^5) .* sinh(k*(z+h)).*sin(theta);
     w2 = 2*A22*omega0*k*a^2.*sinh(2*k*(z+h)).*sin(2*theta);
     w3 = 3*A33*omega0*k^2*a^3.*sinh(3*k*(z+h)).*sin(3*theta);
     w4 = 2*A42 *omega0*k^3*a^4.*sinh(2*k*(z+h)).*sin(2*theta) + ...
