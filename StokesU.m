@@ -23,12 +23,12 @@ function [phi, u, w] = StokesU(k, h, a, modeNo, theta, z)
         A31 = (3+8*sigma^2-9*sigma^4)/16/sigma^4 / sinh(k*h); 
         A51 = (121*alpha^6 +432*alpha^5+543*alpha^4-1407*alpha^3-258*alpha^2 ...
             +2001*alpha-1108)/(192*(alpha-1)^5*(alpha+1))/ sinh(k*h);
-        A42 = (12*alpha^4 + 13*alpha^3 - 183*alpha^2 +36*alpha + 41)/(24*(alpha - 1)^5);
+        A42 = (24*alpha^4 + 35*alpha^3 - 267*alpha^2 -99*alpha + 145)/(48*(alpha - 1)^5);
         A53 = (8*alpha^6 + 156*alpha^5 + 495*alpha^4 ...
             - 1933*alpha^3 - 1335*alpha^2 + 882*alpha + 512)/(64*(3*alpha + 2)*(alpha - 1)^6)/sinh(k*h);
-        C2 = ((sigma)^2-1)/4/sigma *(1-(3+8*sigma^2-9*sigma^4)/16/sigma^4*k^2*a^2);
-        C4 = (2*alpha^3 - 2*alpha^2 +7*alpha -25)/4/sigma ...
-            /(16*alpha^3 - 6*alpha^2 - alpha -2)/sinh(2*h*k); 
+        C2 = (sigma^2-1)/4/sigma ; % updated as in manuscript
+        C4 = (24*alpha^5 +162*alpha^4 -133*alpha^3 -136*alpha^2 +211*alpha -86) ...
+            /16/(alpha -1)^3/(16*alpha^3 - 6*alpha^2 - alpha -2);   %updated as in manuscript 
         
     end
     phi1 = (A11*omega0*a/k + A31*omega0*k*a^3 + A51*omega0*k^3*a^5).* cosh(k*(z+h)).*sin(theta);
