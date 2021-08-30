@@ -3,7 +3,7 @@ List of files
 
 1. StokesTheoryCombined.mlx 
 
-This file is used to derive solutions for Stokes waves following the manuscript 'On Stokes Wave Solutions'. To be used with Matlab Live Editor for best view of equations. 
+This file is used to derive solutions for Stokes waves following the manuscript 'On Stokes Wave Solutions'. To be used with Matlab Live Editor for best view of equations. Note that running this file consumes lot of computer memory, and the fifth order derivation takes relatively long time. Try to close other programmes if you intend to run this file in live editor. 
 
 2. toUseStokesTheory.m 
 
