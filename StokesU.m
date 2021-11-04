@@ -20,9 +20,9 @@ function [phi, u, w] = StokesU(k, h, a, modeNo, theta, z)
             /(16*alpha^3 - 6*alpha^2 - alpha -2)/sinh(2*h*k);
         
     case 2       
-        A31 = (3+8*sigma^2-9*sigma^4)/16/sigma^4 / sinh(k*h); 
-        A51 = (121*alpha^6 +432*alpha^5+543*alpha^4-1407*alpha^3-258*alpha^2 ...
-            +2001*alpha-1108)/(192*(alpha-1)^5*(alpha+1))/ sinh(k*h);
+        A31 = - (3+8*sigma^2-9*sigma^4)/16/sigma^4 / sinh(k*h); %minus sign added on 04 Nov 2021
+        A51 = - (121*alpha^6 +432*alpha^5+543*alpha^4-1407*alpha^3-258*alpha^2 ...
+            +2001*alpha-1108)/(192*(alpha-1)^5*(alpha+1))/ sinh(k*h); ; %minus sign added on 04 Nov 2021
         A42 = (24*alpha^4 + 35*alpha^3 - 267*alpha^2 -99*alpha + 145)/(48*(alpha - 1)^5);
         A53 = (8*alpha^6 + 156*alpha^5 + 495*alpha^4 ...
             - 1933*alpha^3 - 1335*alpha^2 + 882*alpha + 512)/(64*(3*alpha + 2)*(alpha - 1)^6)/sinh(k*h);
