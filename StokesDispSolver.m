@@ -64,15 +64,15 @@ Results.omega = omega;
     end
     kResults = double(vpasolve(omegaFun, k, [0 Inf]));
     Results.omega0 = sqrt(g*kResults*tanh(kResults*h));
-    
-        B33 = (cosh(2*h*kResults)^3 + 3*cosh(2*h*kResults)^2 + 3*cosh(2*h*kResults) + 2)/(8*(cosh(2*h*kResults) - 1)^3);  
+    sigma = tanh(kResults*h);
+        B33 = (27-9*sigma^2+9*sigma^4-3*sigma^6)/64/sigma^6; % update 20211105
         B55 = (300*cosh(2*h*kResults)^8 + 1579*cosh(2*h*kResults)^7 + 3176*cosh(2*h*kResults)^6 + 2949*cosh(2*h*kResults)^5 ...
             + 1188*cosh(2*h*kResults)^4 + 675*cosh(2*h*kResults)^3 + 1326*cosh(2*h*kResults)^2 + 827*cosh(2*h*kResults) ...
             + 130)*5/((cosh(2*h*kResults) - 1)^6*(12*cosh(2*h*kResults)^2 + 11*cosh(2*h*kResults) + 2)*384);
 %     [B31,B33,B51,B53,B55] = findBcoeff(h,kResults);
     switch modeNo
         case 1
-            B31 = (cosh(2*h*kResults)^2 + 12*cosh(2*h*kResults) - 7)/(8*(cosh(2*h*kResults) - 1)^2);
+            B31 = (3+8*sigma^2-9*sigma^4)/16/sigma^4; % update 20211105
             B51 = (121*cosh(2*h*kResults)^6 + 432*cosh(2*h*kResults)^5 + 543*cosh(2*h*kResults)^4 - 1407*cosh(2*h*kResults)^3 ...
             - 258*cosh(2*h*kResults)^2 + 2001*cosh(2*h*kResults) - 1108)/(192*(cosh(2*h*kResults) - 1)^5*(cosh(2*h*kResults) + 1));
             B53 = (57*cosh(2*h*kResults)^7 + 204*cosh(2*h*kResults)^6 - 53*cosh(2*h*kResults)^5 ...
@@ -94,15 +94,15 @@ elseif and(exist('H', 'var') ==1, exist('T', 'var') ==1)
     omega = 2*pi/T;
     Results.omega = omega;
     syms a aw
-     
-        B33 = (cosh(2*h*k)^3 + 3*cosh(2*h*k)^2 + 3*cosh(2*h*k) + 2)/(8*(cosh(2*h*k) - 1)^3);        
+        sigma = tanh(k*h);
+        B33 = (27-9*sigma^2+9*sigma^4-3*sigma^6)/64/sigma^6;  % update 20211105     
         B55 = (300*cosh(2*h*k)^8 + 1579*cosh(2*h*k)^7 + 3176*cosh(2*h*k)^6 + 2949*cosh(2*h*k)^5 ...
             + 1188*cosh(2*h*k)^4 + 675*cosh(2*h*k)^3 + 1326*cosh(2*h*k)^2 + 827*cosh(2*h*k) ...
             + 130)*5/((cosh(2*h*k) - 1)^6*(12*cosh(2*h*k)^2 + 11*cosh(2*h*k) + 2)*384);
 %         [B31,B33,B51,B53,B55] = findBcoeff(h,k);
     switch modeNo
         case 1
-            B31 = (cosh(2*h*k)^2 + 12*cosh(2*h*k) - 7)/(8*(cosh(2*h*k) - 1)^2);
+            B31 =  (3+8*sigma^2-9*sigma^4)/16/sigma^4; % update 20211105 
             B51 = (121*cosh(2*h*k)^6 + 432*cosh(2*h*k)^5 + 543*cosh(2*h*k)^4 - 1407*cosh(2*h*k)^3 ...
             - 258*cosh(2*h*k)^2 + 2001*cosh(2*h*k) - 1108)/(192*(cosh(2*h*k) - 1)^5*(cosh(2*h*k) + 1));
             B53 = (57*cosh(2*h*k)^7 + 204*cosh(2*h*k)^6 - 53*cosh(2*h*k)^5 ...
@@ -139,13 +139,14 @@ elseif  and(exist('a', 'var') ==1, exist('omega0', 'var') ==1)
     Results.omega0 = omega0;
     kResults = double(vpasolve(omega0^2 - g*k*tanh(k*h), k, [0 inf]));
     alpha1 = cosh(2*kResults*h);    
-    B33 = (cosh(2*h*kResults)^3 + 3*cosh(2*h*kResults)^2 + 3*cosh(2*h*kResults) + 2)/(8*(cosh(2*h*kResults) - 1)^3);    
+    sigma = tanh(kResults*h);
+    B33 = (27-9*sigma^2+9*sigma^4-3*sigma^6)/64/sigma^6;    % update 20211105 
     B55 = (300*cosh(2*h*kResults)^8 + 1579*cosh(2*h*kResults)^7 + 3176*cosh(2*h*kResults)^6 + 2949*cosh(2*h*kResults)^5 ...
         + 1188*cosh(2*h*kResults)^4 + 675*cosh(2*h*kResults)^3 + 1326*cosh(2*h*kResults)^2 + 827*cosh(2*h*kResults) ...
         + 130)*5/((cosh(2*h*kResults) - 1)^6*(12*cosh(2*h*kResults)^2 + 11*cosh(2*h*kResults) + 2)*384);
     switch modeNo
         case 1
-            B31 = (cosh(2*h*kResults)^2 + 12*cosh(2*h*kResults) - 7)/(8*(cosh(2*h*kResults) - 1)^2);
+            B31 = (3+8*sigma^2-9*sigma^4)/16/sigma^4;% update 20211105 
             B51 = (121*cosh(2*h*kResults)^6 + 432*cosh(2*h*kResults)^5 + 543*cosh(2*h*kResults)^4 - 1407*cosh(2*h*kResults)^3 ...
                 - 258*cosh(2*h*kResults)^2 + 2001*cosh(2*h*kResults) - 1108)/(192*(cosh(2*h*kResults) - 1)^5*(cosh(2*h*kResults) + 1));
             B53 = (57*cosh(2*h*kResults)^7 + 204*cosh(2*h*kResults)^6 - 53*cosh(2*h*kResults)^5 ...
@@ -180,7 +181,8 @@ elseif and(exist('H', 'var') ==1, exist('omega0', 'var') ==1)
     kResults = double(vpasolve(omega0^2 - g*k*tanh(k*h), k, [0 inf]));
     alpha1 = cosh(2*kResults*h);
     syms a aw    
-    B33 = (cosh(2*h*kResults)^3 + 3*cosh(2*h*kResults)^2 + 3*cosh(2*h*kResults) + 2)/(8*(cosh(2*h*kResults) - 1)^3);    
+    sigma = tanh(kResults*h);
+    B33 = (27-9*sigma^2+9*sigma^4-3*sigma^6)/64/sigma^6;   % update 20211105 
     B55 = (300*cosh(2*h*kResults)^8 + 1579*cosh(2*h*kResults)^7 + 3176*cosh(2*h*kResults)^6 + 2949*cosh(2*h*kResults)^5 ...
         + 1188*cosh(2*h*kResults)^4 + 675*cosh(2*h*kResults)^3 + 1326*cosh(2*h*kResults)^2 + 827*cosh(2*h*kResults) ...
         + 130)*5/((cosh(2*h*kResults) - 1)^6*(12*cosh(2*h*kResults)^2 + 11*cosh(2*h*kResults) + 2)*384);
@@ -188,7 +190,7 @@ elseif and(exist('H', 'var') ==1, exist('omega0', 'var') ==1)
 %         [B31,B33,B51,B53,B55] = findBcoeff(h,k);
     switch modeNo
         case 1
-            B31 = (cosh(2*h*kResults)^2 + 12*cosh(2*h*kResults) - 7)/(8*(cosh(2*h*kResults) - 1)^2);
+            B31 = (3+8*sigma^2-9*sigma^4)/16/sigma^4;% update 20211105 
             B51 = (121*cosh(2*h*kResults)^6 + 432*cosh(2*h*kResults)^5 + 543*cosh(2*h*kResults)^4 - 1407*cosh(2*h*kResults)^3 ...
                 - 258*cosh(2*h*kResults)^2 + 2001*cosh(2*h*kResults) - 1108)/(192*(cosh(2*h*kResults) - 1)^5*(cosh(2*h*kResults) + 1));
             B53 = (57*cosh(2*h*kResults)^7 + 204*cosh(2*h*kResults)^6 - 53*cosh(2*h*kResults)^5 ...
