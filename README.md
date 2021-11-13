@@ -3,7 +3,7 @@ List of files
 
 1. StokesTheoryCombined.mlx 
 
-This file is used to derive solutions for Stokes waves following the manuscript 'On Stokes Wave Solutions'. To be used with Matlab Live Editor for best view of equations. Note that running this file consumes lot of computer memory, and the fifth order derivation takes relatively long time. Try to close other programmes if you intend to run this file in live editor. In this file, the symbol H means the wave height for first order first harmonic term for derivation. This is not the same H as in the manuscript. 
+This file is used to derive solutions for Stokes waves following the manuscript 'On Stokes Wave Solutions' by Zhao and Liu (2021 - submitted for consideration). To be used with Matlab Live Editor for best view of equations. Note that running this file consumes lot of computer memory, and the fifth order derivation takes relatively long time. Try to close other programmes and save your work if you intend to run this file in live editor. In this file, the symbol H means the wave height for first order first harmonic term for derivation. This is not the same H as in the manuscript. 
 
 2. toUseStokesTheory.m 
 
@@ -29,17 +29,15 @@ This file is to be opened using Matlab Live Editor. This file shows the process 
 
 This file shows the process of converting the potential functions in S and H, and Fenton to the format in the present manuscript for comparison. 
 
-8. FentonU.m
-
-This is a function to find velocity using Fenton's equations.
-
-9. FentonEta.m
-
-This is a function to find free surface profiles using Fenton's equations.
-
-10. FentonDispSolver.m
-
-This function is the solver to find wave number using the nonlinear dispersion relationship in Fenton's paper. 
+8. OtherSolutions.zip
+This group of solution is the function to find results using Fenton's equations.
+FentonU.m
+FentonEta.m
+FentonDispSolver.m
+This group of solution is the function to find results using Skjelbreia and Hendrickson's equations.
+SnHDispSolver.m
+SnHEta.m
+SnHU.m
 
 Others
 
