@@ -30,16 +30,24 @@ This file is to be opened using Matlab Live Editor. This file shows the process 
 This file shows the process of converting the potential functions in S and H, and Fenton to the format in the present manuscript for comparison. 
 
 8. OtherSolutions.zip
+
 This group of solution is the function to find results using Fenton's equations.
+
 FentonU.m
+
 FentonEta.m
+
 FentonDispSolver.m
+
 This group of solution is the function to find results using Skjelbreia and Hendrickson's equations.
+
 SnHDispSolver.m
+
 SnHEta.m
+
 SnHU.m
 
-Others
+Others Codes
 
 hyperIden.m
 
