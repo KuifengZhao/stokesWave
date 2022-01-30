@@ -17,8 +17,7 @@ g = 9.81;
         A53 = (8*alpha^6 + 138*alpha^5 + 384*alpha^4 ...
             - 568*alpha^3 - 2388*alpha^2 + 237*alpha + 974)/(64*(3*alpha + 2)*(alpha - 1)^6*sinh(k*h));       
         C2 = (sigma^2-1)/4/sigma;
-        C4 = (2*alpha^3 - 2*alpha^2 +7*alpha -25)/8 ...
-            /(alpha -1)^3/sinh(2*h*k);
+        C4 = -9/4/(alpha -1)^3/sinh(2*h*k);
         
    
     phi1 = A11*omega0*a/k.* cosh(k*(z+h)).*sin(theta);
