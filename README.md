@@ -1,9 +1,10 @@
 # stokesWave
+
 List of files 
 
 1. StokesTheoryCombined.mlx 
 
-This file is used to derive solutions for Stokes waves following the manuscript 'On Stokes Wave Solutions' by Zhao and Liu (2021 - accepted). To be used with Matlab Live Editor for best view of equations. Note that running this file consumes lot of computer memory, and the fifth order derivation takes relatively long time. Try to close other programmes and save your work if you intend to run this file in live editor. In this file, the symbol H means the wave height for first order first harmonic term for derivation. This is not the same H as in the manuscript. 
+This file is used to derive solutions for Stokes waves following the manuscript 'On Stokes Wave Solutions' by Zhao and Liu (2022, DOI - https://doi.org/10.1098/rspa.2021.0732). To be used with Matlab Live Editor for best view of equations. Note that running this file consumes lot of computer memory, and the fifth order derivation takes relatively long time. Try to close other programmes and save your work if you intend to run this file in live editor. In this file, the symbol H means the wave height for first order first harmonic term for derivation. This is not the same H as in the manuscript. 
 
 2. toUseStokesTheory.m 
 
